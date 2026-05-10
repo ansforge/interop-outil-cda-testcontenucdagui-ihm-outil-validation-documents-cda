@@ -450,6 +450,11 @@ public class WebViewSample extends Application {
 	 * Logger
 	 */
 	private static final Logger LOG = Logger.getLogger(WebViewSample.class);
+	private static final String VERIF_MODELES_ANS_XML = "_verif_Modeles_ANS.xml";
+	private static final String VERIF_TERMINOLOGIES_XML = "_verif_terminologies.xml";
+	private static final String STRUCT_MIN_SCH_PATH = "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch";
+	private static final String STRUCT_MIN_XSL_PATH = "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.xsl";
+	private static final String SPEC_VOLETS_PATH = "\\schematrons\\include\\specificationsVolets\\";
 
 	/**
 	 * void main for Javafx launcher Main secondaire de l'application de javaFX
@@ -622,9 +627,9 @@ public class WebViewSample extends Application {
 							outputMCFile = new File(parent + Constant.REPPORT + "\\"
 									+ validator.removeExtension(file.getName()) + "_verif_ModelesDeContenusCDA.xml");
 							outputAnsFile = new File(parent + Constant.REPPORT + "\\"
-									+ validator.removeExtension(file.getName()) + "_verif_Modeles_ANS.xml");
+									+ validator.removeExtension(file.getName()) + VERIF_MODELES_ANS_XML);
 							outputTerminoFile = new File(parent + Constant.REPPORT + "\\"
-									+ validator.removeExtension(file.getName()) + "_verif_terminologies.xml");
+									+ validator.removeExtension(file.getName()) + VERIF_TERMINOLOGIES_XML);
 							outputSchFile = new File(parent + Constant.REPPORT + "\\"
 									+ validator.removeExtension(file.getName()) + "_verif.xml");
 							validator.setXmlFile(file);
@@ -632,9 +637,9 @@ public class WebViewSample extends Application {
 							validator.setExpandFile(parent + "\\schematrons\\moteur\\iso_abstract_expand.xsl");
 							validator.setSvrlFile(parent + "\\schematrons\\moteur\\iso_svrl_for_xslt2.xsl");
 							validator.setStructMinFile(parent
-									+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch");
+									+ STRUCT_MIN_SCH_PATH);
 							validator.setStructMinXslFile(parent
-									+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.xsl");
+									+ STRUCT_MIN_XSL_PATH);
 							validator.setStructMinBase(parent + "\\schematrons\\profils\\structurationMinimale");
 							validator.setMcCdaBase(parent + "\\schematrons\\profils");
 							validator.setStructMinReport(parent + Constant.REPPORT);
@@ -670,17 +675,17 @@ public class WebViewSample extends Application {
 											+ "_verif_ModelesDeContenusCDA.xml"));
 							validator.setOutputFilePathAns(new File(
 									repRepport + "\\" + validator.removeExtension(new File(text1.getText()).getName())
-											+ "_verif_Modeles_ANS.xml"));
+											+ VERIF_MODELES_ANS_XML));
 							validator.setOutputFilePathTer(new File(
 									repRepport + "\\" + validator.removeExtension(new File(text1.getText()).getName())
-											+ "_verif_terminologies.xml"));
+											+ VERIF_TERMINOLOGIES_XML));
 							validator.setOutputFilePathSch(new File(repRepport + "\\"
 									+ validator.removeExtension(new File(text1.getText()).getName()) + "_verif.xml"));
 							if (outputFile.exists()) {
 								final long lastModifiedO = outputFile.lastModified();
 								final long lastModifiedF = file.lastModified();
 								final String schFile = parent
-										+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch";
+										+ STRUCT_MIN_SCH_PATH;
 								final long lastModifiedS = new File(schFile).lastModified();
 
 								List<Long> listDate;
@@ -816,12 +821,12 @@ public class WebViewSample extends Application {
 								listDateJ = processIncludes(schFile,
 										new File(parent + "\\schematrons\\include\\jeuxDeValeurs\\" + nameRemove));
 								listDateE = processIncludes(schFile, new File(parent
-										+ "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Entete"));
+										+ SPEC_VOLETS_PATH + nameRemove + "\\Entete"));
 								listDateS = processIncludes(schFile,
-										new File(parent + "\\schematrons\\include\\specificationsVolets\\" + nameRemove
+										new File(parent + SPEC_VOLETS_PATH + nameRemove
 												+ "\\Sections"));
 								listDateEn = processIncludes(schFile, new File(parent
-										+ "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Entrees"));
+										+ SPEC_VOLETS_PATH + nameRemove + "\\Entrees"));
 								listDate.addAll(listDateJ);
 								listDate.addAll(listDateE);
 								listDate.addAll(listDateS);
@@ -1017,9 +1022,9 @@ public class WebViewSample extends Application {
 							outputMCFile = new File(parent + Constant.REPPORT + "\\"
 									+ validator.removeExtension(file.getName()) + "_verif_ModelesDeContenusCDA.xml");
 							outputAnsFile = new File(parent + Constant.REPPORT + "\\"
-									+ validator.removeExtension(file.getName()) + "_verif_Modeles_ANS.xml");
+									+ validator.removeExtension(file.getName()) + VERIF_MODELES_ANS_XML);
 							outputTerminoFile = new File(parent + Constant.REPPORT + "\\"
-									+ validator.removeExtension(file.getName()) + "_verif_terminologies.xml");
+									+ validator.removeExtension(file.getName()) + VERIF_TERMINOLOGIES_XML);
 							outputSchFile = new File(parent + Constant.REPPORT + "\\"
 									+ validator.removeExtension(file.getName()) + "_verif.xml");
 							validator.setXmlFile(file);
@@ -1027,9 +1032,9 @@ public class WebViewSample extends Application {
 							validator.setExpandFile(parent + "\\schematrons\\moteur\\iso_abstract_expand.xsl");
 							validator.setSvrlFile(parent + "\\schematrons\\moteur\\iso_svrl_for_xslt2.xsl");
 							validator.setStructMinFile(parent
-									+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch");
+									+ STRUCT_MIN_SCH_PATH);
 							validator.setStructMinXslFile(parent
-									+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.xsl");
+									+ STRUCT_MIN_XSL_PATH);
 							validator.setStructMinBase(parent + "\\schematrons\\profils\\structurationMinimale");
 							validator.setMcCdaBase(parent + "\\schematrons\\profils");
 							validator.setStructMinReport(parent + Constant.REPPORT);
@@ -1065,17 +1070,17 @@ public class WebViewSample extends Application {
 											+ "_verif_ModelesDeContenusCDA.xml"));
 							validator.setOutputFilePathAns(new File(
 									repRepport + "\\" + validator.removeExtension(new File(text1.getText()).getName())
-											+ "_verif_Modeles_ANS.xml"));
+											+ VERIF_MODELES_ANS_XML));
 							validator.setOutputFilePathTer(new File(
 									repRepport + "\\" + validator.removeExtension(new File(text1.getText()).getName())
-											+ "_verif_terminologies.xml"));
+											+ VERIF_TERMINOLOGIES_XML));
 							validator.setOutputFilePathSch(new File(repRepport + "\\"
 									+ validator.removeExtension(new File(text1.getText()).getName()) + "_verif.xml"));
 							if (outputFile.exists()) {
 								final long lastModifiedO = outputFile.lastModified();
 								final long lastModifiedF = file.lastModified();
 								final String schFile = parent
-										+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch";
+										+ STRUCT_MIN_SCH_PATH;
 								final long lastModifiedS = new File(schFile).lastModified();
 
 								List<Long> listDate;
@@ -1211,12 +1216,12 @@ public class WebViewSample extends Application {
 								listDateJ = processIncludes(schFile,
 										new File(parent + "\\schematrons\\include\\jeuxDeValeurs\\" + nameRemove));
 								listDateE = processIncludes(schFile, new File(parent
-										+ "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Entete"));
+										+ SPEC_VOLETS_PATH + nameRemove + "\\Entete"));
 								listDateS = processIncludes(schFile,
-										new File(parent + "\\schematrons\\include\\specificationsVolets\\" + nameRemove
+										new File(parent + SPEC_VOLETS_PATH + nameRemove
 												+ "\\Sections"));
 								listDateEn = processIncludes(schFile, new File(parent
-										+ "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Entrees"));
+										+ SPEC_VOLETS_PATH + nameRemove + "\\Entrees"));
 								listDate.addAll(listDateJ);
 								listDate.addAll(listDateE);
 								listDate.addAll(listDateS);
@@ -1971,9 +1976,9 @@ public class WebViewSample extends Application {
 					outputMCFile = new File(parent + Constant.REPPORT + "\\" + validator.removeExtension(file.getName())
 							+ "_verif_ModelesDeContenusCDA.xml");
 					outputAnsFile = new File(parent + Constant.REPPORT + "\\"
-							+ validator.removeExtension(file.getName()) + "_verif_Modeles_ANS.xml");
+							+ validator.removeExtension(file.getName()) + VERIF_MODELES_ANS_XML);
 					outputTerminoFile = new File(parent + Constant.REPPORT + "\\"
-							+ validator.removeExtension(file.getName()) + "_verif_terminologies.xml");
+							+ validator.removeExtension(file.getName()) + VERIF_TERMINOLOGIES_XML);
 					outputSchFile = new File(parent + Constant.REPPORT + "\\"
 							+ validator.removeExtension(file.getName()) + "_verif.xml");
 					validator.setXmlFile(file);
@@ -1981,9 +1986,9 @@ public class WebViewSample extends Application {
 					validator.setExpandFile(parent + "\\schematrons\\moteur\\iso_abstract_expand.xsl");
 					validator.setSvrlFile(parent + "\\schematrons\\moteur\\iso_svrl_for_xslt2.xsl");
 					validator.setStructMinFile(
-							parent + "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch");
+							parent + STRUCT_MIN_SCH_PATH);
 					validator.setStructMinXslFile(
-							parent + "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.xsl");
+							parent + STRUCT_MIN_XSL_PATH);
 					validator.setStructMinBase(parent + "\\schematrons\\profils\\structurationMinimale");
 					validator.setMcCdaBase(parent + "\\schematrons\\profils");
 					validator.setStructMinReport(parent + Constant.REPPORT);
@@ -2016,17 +2021,17 @@ public class WebViewSample extends Application {
 									+ "_verif_ModelesDeContenusCDA.xml"));
 					validator.setOutputFilePathAns(
 							new File(repRepport + "\\" + validator.removeExtension(new File(text1.getText()).getName())
-									+ "_verif_Modeles_ANS.xml"));
+									+ VERIF_MODELES_ANS_XML));
 					validator.setOutputFilePathTer(
 							new File(repRepport + "\\" + validator.removeExtension(new File(text1.getText()).getName())
-									+ "_verif_terminologies.xml"));
+									+ VERIF_TERMINOLOGIES_XML));
 					validator.setOutputFilePathSch(new File(repRepport + "\\"
 							+ validator.removeExtension(new File(text1.getText()).getName()) + "_verif.xml"));
 					if (outputFile.exists()) {
 						final long lastModifiedO = outputFile.lastModified();
 						final long lastModifiedF = file.lastModified();
 						final String schFile = parent
-								+ "\\schematrons\\profils\\structurationMinimale\\ASIP-STRUCT-MIN-StrucMin.sch";
+								+ STRUCT_MIN_SCH_PATH;
 						final long lastModifiedS = new File(schFile).lastModified();
 
 						List<Long> listDate;
@@ -2156,11 +2161,11 @@ public class WebViewSample extends Application {
 						listDateJ = processIncludes(schFile,
 								new File(parent + "\\schematrons\\include\\jeuxDeValeurs\\" + nameRemove));
 						listDateE = processIncludes(schFile, new File(
-								parent + "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Entete"));
+								parent + SPEC_VOLETS_PATH + nameRemove + "\\Entete"));
 						listDateS = processIncludes(schFile, new File(
-								parent + "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Sections"));
+								parent + SPEC_VOLETS_PATH + nameRemove + "\\Sections"));
 						listDateEn = processIncludes(schFile, new File(
-								parent + "\\schematrons\\include\\specificationsVolets\\" + nameRemove + "\\Entrees"));
+								parent + SPEC_VOLETS_PATH + nameRemove + "\\Entrees"));
 						listDate.addAll(listDateJ);
 						listDate.addAll(listDateE);
 						listDate.addAll(listDateS);
