@@ -3076,7 +3076,7 @@ public class WebViewSample extends Application {
 							Inutility2.construct3(cls, sNomFichierCDA, dateHeure, schema, pattern, rules, nbrError2,
 									nbrWar2, mapErr2, mapWar2);
 						} else {
-							Inutility2.construct4(cls, sNomFichierCDA, dateHeure, schema, pattern, rules, nbrError2,
+							Inutility2.construct4(cls, sNomFichierCDA, dateHeure, schema, pattern, rules,
 									nbrWar2, mapWar2);
 						}
 					} else {
@@ -3109,7 +3109,7 @@ public class WebViewSample extends Application {
 								rulesCorps, nbrError3, nbrWar3, mapErr3, mapWar3);
 					} else {
 						Inutility2.construct4(cls, sNomFichierCDA, dateHeureCorps, schemaCorps, patternCorps,
-								rulesCorps, nbrError3, nbrWar3, mapWar3);
+								rulesCorps, nbrWar3, mapWar3);
 					}
 				}
 				if (NumberUtils.compare(newValue.intValue(), 3) == 0) {
@@ -3130,7 +3130,7 @@ public class WebViewSample extends Application {
 
 					} else {
 						Inutility2.construct4(cls, sNomFichierCDA, dateHeureMDC, schemaMDC, patternMDC, rulesMDC,
-								nbrError5, nbrWar5, mapWar5);
+								nbrWar5, mapWar5);
 					}
 				}
 				if (NumberUtils.compare(newValue.intValue(), 4) == 0) {
@@ -3150,7 +3150,7 @@ public class WebViewSample extends Application {
 								nbrError6, nbrWar6, mapErr6, mapWar6);
 					} else {
 						Inutility2.construct4(cls, sNomFichierCDA, dateHeureMANS, schemaMANS, patternMANS, rulesMANS,
-								nbrError6, nbrWar6, mapWar6);
+								nbrWar6, mapWar6);
 					}
 				}
 				if (NumberUtils.compare(newValue.intValue(), 5) == 0) {
@@ -3169,7 +3169,7 @@ public class WebViewSample extends Application {
 						Inutility2.construct3(cls, sNomFichierCDA, dateHeureSM, schemaSM, patternSM, rulesSM, nbrError7,
 								nbrWar7, mapErr7, mapWar7);
 					} else {
-						Inutility2.construct4(cls, sNomFichierCDA, dateHeureSM, schemaSM, patternSM, rulesSM, nbrError7,
+						Inutility2.construct4(cls, sNomFichierCDA, dateHeureSM, schemaSM, patternSM, rulesSM,
 								nbrWar7, mapWar7);
 					}
 				}
@@ -3189,7 +3189,7 @@ public class WebViewSample extends Application {
 						Inutility2.construct3(cls, sNomFichierCDA, dateHeureT, schemaT, patternT, rulesT, nbrError8,
 								nbrWar8, mapErr8, mapWar8);
 					} else {
-						Inutility2.construct4(cls, sNomFichierCDA, dateHeureT, schemaT, patternT, rulesT, nbrError8,
+						Inutility2.construct4(cls, sNomFichierCDA, dateHeureT, schemaT, patternT, rulesT,
 								nbrWar8, mapWar8);
 					}
 				}

@@ -194,7 +194,7 @@ public final class Inutility2 {
 	 * @param nbrError2      @param nbrWar2 @param mapWar2
 	 */
 	public static void construct4(final LabelCls cls, final String sNomFichierCDA, final String dateHeure,
-			final String schema, final int pattern, final int rules, final int nbrError2, final int nbrWar2,
+			final String schema, final int pattern, final int rules, final int nbrWar2,
 			final Map<String, String> mapWar2) {
 		Inutility5.getLabel1(cls).setTextFill(Color.BLACK);
 		Inutility5.getLabel1(cls).setText(Inutility.getString("label.rapport7") + " " + sNomFichierCDA + ".xml" + "\n");
